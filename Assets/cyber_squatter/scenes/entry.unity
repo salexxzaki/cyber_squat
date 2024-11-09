@@ -21050,7 +21050,7 @@ MonoBehaviour:
   lowerAmplitudeReached: 0
   upperAmplitudeReached: 0
   squatState: 0
-  isDebug: 1
+  isDebug: 0
   debugHeadset: {fileID: 1559551543}
 --- !u!1 &1326739665
 GameObject:
