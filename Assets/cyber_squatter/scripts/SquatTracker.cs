@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR;
 
@@ -13,6 +14,7 @@ public class SquatCounter : MonoBehaviour
 {
     [Header("References")]
     public Transform referencePoint;
+    public TMP_Text squatCountText;
     [Header("Config")]
     private InputDevice _headset;
     public int squatCount;
@@ -94,6 +96,7 @@ public class SquatCounter : MonoBehaviour
                 squatCount++;
                 lowerAmplitudeReached = false;
                 upperAmplitudeReached = false;
+                squatCountText.text = "SQUAT COUNTER: " + squatCount;
             }
         }
     }
