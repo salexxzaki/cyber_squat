@@ -29,6 +29,13 @@ namespace Whisper.Samples
 
             microphoneRecord.OnRecordStop += OnRecordStop;
             button.onClick.AddListener(OnButtonPressed);
+            
+            AutoStart();
+        }
+
+        private void AutoStart()
+        {
+            OnButtonPressed();
         }
 
         private void OnButtonPressed()
