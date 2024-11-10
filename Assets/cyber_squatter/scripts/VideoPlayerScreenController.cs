@@ -37,8 +37,6 @@ public class VideoPlayerScreenController : MonoBehaviour
         videoPlayer.clip = videoObjects[currentVideoIndex].clip;
         videoPlayer.Prepare();
         videoPlayer.prepareCompleted += (vp) => videoPlayer.Pause();
-        
-        Invoke(nameof(InitialPlay), 1.5f);
     }
 
 
@@ -55,7 +53,6 @@ public class VideoPlayerScreenController : MonoBehaviour
         }
         
         TurnOnScreen();
-        PlayVideo();
     }
 
     public void TurnOnScreen()
@@ -63,8 +60,8 @@ public class VideoPlayerScreenController : MonoBehaviour
         if(isTurnedOn) return;
         enabledScreen.SetActive(true);
         disabledScreen.SetActive(false);
-        PlayVideo();
         isTurnedOn = true;
+        PlayVideo();
     }
     
     public void NextVideo()
@@ -99,9 +96,15 @@ public class VideoPlayerScreenController : MonoBehaviour
     {
         pausedScreen.SetActive(false);
         videoPlayer.time = _pausedTime;
-        videoPlayer.Play();
-        
-        
+        if (videoPlayer.isPrepared)
+        {
+            videoPlayer.Play();
+        }
+        else
+        {
+            videoPlayer.Prepare();
+            videoPlayer.prepareCompleted += (vp) => videoPlayer.Play();
+        }
     }
     
     private void InitialPlay()

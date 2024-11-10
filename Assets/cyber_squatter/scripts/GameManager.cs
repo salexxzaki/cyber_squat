@@ -30,6 +30,13 @@ public class GameManager : MonoBehaviour
    private void Start()
    {
       UpdateBatteryValue();
+      Invoke(nameof(InitialPlay), 1.5f);
+   }
+
+   private void InitialPlay()
+   {
+      isPaused = false;
+      videoControllah.PlayVideo();
    }
 
    public void OnPauseHandler()
