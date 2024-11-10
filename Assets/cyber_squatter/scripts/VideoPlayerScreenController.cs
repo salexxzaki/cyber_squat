@@ -7,7 +7,8 @@ public enum VideoTypes
 {
     study,
     music,
-    fun
+    fun,
+    none
 }
 
 [System.Serializable]
