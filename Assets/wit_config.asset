@@ -1,0 +1,757 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2067114291850376186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c2918ba0e7451694416d42d69e0944, type: 3}
+  m_Name: WitComposerData
+  m_EditorClassIdentifier: 
+  canvases: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: wit_config
+  m_EditorClassIdentifier: 
+  _clientAccessToken: QY64Q64ZHCE3BLBWJHL6HGCRSRKTEBIF
+  _appInfo:
+    name: cyber_squatter
+    id: 919016682977140
+    lang: en
+    isPrivate: 1
+    createdAt: 2024-11-09T14:02:06-0800
+    trainingStatus: 1
+    lastTrainDuration: 78
+    lastTrainedAt: 2024-11-09T15:30:25-0800
+    nextTrainAt: 2024-11-09T15:29:07-0800
+    intents:
+    - id: 3844501179096349
+      name: learn
+      entities:
+      - name: learn:learn
+        id: 2050077332074927
+    - id: 1121371482750239
+      name: music
+      entities:
+      - name: song:song
+        id: 502603802779624
+    - id: 8437882423006541
+      name: next
+      entities:
+      - name: next:next
+        id: 3871315116491453
+    - id: 869848841931617
+      name: pause
+      entities:
+      - name: pause:pause
+        id: 1356420779100164
+    - id: 1074357210742141
+      name: play
+      entities:
+      - name: play:play
+        id: 1456536375014758
+      - name: stop:stop
+        id: 2031573713938999
+    - id: 536919675977621
+      name: previous
+      entities:
+      - name: previous:previous
+        id: 538615605620613
+    entities:
+    - name: learn
+      id: 1710326256479204
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: learn
+        id: 2050077332074927
+      keywords:
+      - keyword: Can you play something educational?
+        synonyms:
+        - can you play something educational?
+      - keyword: I want to learn something
+        synonyms:
+        - i want to learn something
+      - keyword: "Let\u2019s watch something educational"
+        synonyms:
+        - "let\u2019s watch something educational"
+      - keyword: Play a learning video
+        synonyms:
+        - play a learning video
+      - keyword: Play something to learn about science
+        synonyms:
+        - play something to learn about science
+    - name: next
+      id: 1069239001161029
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: next
+        id: 3871315116491453
+      keywords:
+      - keyword: Can you play the next video?
+        synonyms:
+        - can you play the next video?
+      - keyword: Could you skip to the next video?
+        synonyms:
+        - could you skip to the next video?
+      - keyword: Go to the next video
+        synonyms:
+        - go to the next video
+      - keyword: Move to the next video
+        synonyms:
+        - move to the next video
+      - keyword: Next one
+        synonyms:
+        - next one
+      - keyword: Next video
+        synonyms:
+        - next video
+      - keyword: Please play the next video
+        synonyms:
+        - please play the next video
+    - name: pause
+      id: 1772027383547902
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: pause
+        id: 1356420779100164
+      keywords:
+      - keyword: Can you pause the video?
+        synonyms:
+        - can you pause the video?
+      - keyword: Pause it
+        synonyms:
+        - pause it
+      - keyword: Pause the video
+        synonyms:
+        - pause the video
+    - name: play
+      id: 2374263772912667
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: play
+        id: 1456536375014758
+      keywords:
+      - keyword: "Let\u2019s watch the video"
+        synonyms:
+        - "let\u2019s watch the video"
+      - keyword: Play the video
+        synonyms:
+        - play the video
+      - keyword: Start the video
+        synonyms:
+        - start the video
+    - name: previous
+      id: 1061403272125126
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: previous
+        id: 538615605620613
+      keywords:
+      - keyword: Could you play the last video?
+        synonyms:
+        - could you play the last video?
+      - keyword: Go back to the last one
+        synonyms:
+        - go back to the last one
+      - keyword: Move to the previous one
+        synonyms:
+        - move to the previous one
+      - keyword: Play the previous video
+        synonyms:
+        - play the previous video
+      - keyword: Please go to the previous video
+        synonyms:
+        - please go to the previous video
+      - keyword: Previous video
+        synonyms:
+        - previous video
+    - name: song
+      id: 1209886003430291
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: song
+        id: 502603802779624
+      keywords:
+      - keyword: Can you play some music?
+        synonyms:
+        - can you play some music?
+      - keyword: Could you start the music?
+        synonyms:
+        - could you start the music?
+      - keyword: Play some music
+        synonyms:
+        - play some music
+      - keyword: Please play music
+        synonyms:
+        - please play music
+      - keyword: Start playing music
+        synonyms:
+        - start playing music
+    - name: stop
+      id: 582053831061066
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: stop
+        id: 2031573713938999
+      keywords:
+      - keyword: Stop the video
+        synonyms:
+        - stop the video
+    traits: []
+    versionTags: []
+    voices:
+    - name: wit$British Butler
+      locale: en_GB
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cael
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cam
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Carl
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cartoon Baby
+      locale: en_US
+      gender: nonbinary
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cartoon Kid
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cartoon Villain
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cockney Accent
+      locale: en_GB
+      gender: nonbinary
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cody
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Colin
+      locale: en_CA
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Connor
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Disaffected
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Hollywood
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Kenyan Accent
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Overconfident
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Pirate
+      locale: en_GB
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Railey
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Remi
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Rosie
+      locale: en_CA
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Rubie
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Southern Accent
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Surfer
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Trendy
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Whimsical
+      locale: en_GB
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+    - name: wit$Wizard
+      locale: en_GB
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+      supported_features:
+      - style
+      - pitch
+      - speed
+      - sfx
+      - viseme_events
+      - phoneme_events
+      - word_events
+  _configData:
+  - {fileID: -2067114291850376186}
+  _configurationId: 32bf8175-8a57-4657-8dd3-d3a7b10aa3ac
+  _requestType: 0
+  _requestTimeoutMs: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 0
+  useIntentAttributes: 1
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-7dd9ffbe-9b2f-493d-90cb-338b81797d3d.json
+  excludedAssemblies:
+  - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  relaxedResolution: 0
