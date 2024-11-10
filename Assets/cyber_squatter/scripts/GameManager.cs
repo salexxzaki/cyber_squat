@@ -10,24 +10,105 @@ public class GameManager : MonoBehaviour
    [Header("Reference")]
    public BatteryVisualController batteryControl;
    public CoachController coachController;
+   public VideoPlayerScreenController videoControllah;
    
    [Header("Config")]
    public float maxTime = 30f;
    public float timeReward = 5f;
    public float interval = 1f;
    private float _timer = 0f;
+   
    [Header("Debug")]
    public float timeLeft = 10f;
-
    public UnityEvent onTimeFinished;
    public UnityEvent onTimeMaxed;
    public UnityEvent onTimeUpdated;
 
    public CoachMood lastMoodDebug;
+   public bool isPaused = true;
 
    private void Start()
    {
       UpdateBatteryValue();
+   }
+
+   public void OnPauseHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      isPaused = true;
+      videoControllah.PauseVideo();
+   }
+   
+   public void OnPlayHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      isPaused = false;
+      videoControllah.PlayVideo();
+   }
+   
+   public void OnNextHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      videoControllah.NextVideo();
+   }
+   
+   public void OnPreviousHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      videoControllah.PreviousVideo();
+   }
+   
+   public void OnLearnHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      videoControllah.SetTheTheme(VideoTypes.study);
+   }
+   
+   public void OnMusicHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      videoControllah.SetTheTheme(VideoTypes.music);
+   }
+   
+   public void OnFunHandler()
+   {
+      if (timeLeft <= 0)
+      {
+         videoControllah.TurnOffScreen();
+         return;
+      }
+      
+      videoControllah.SetTheTheme(VideoTypes.fun);
    }
 
    public void ProvideReward()
@@ -67,6 +148,11 @@ public class GameManager : MonoBehaviour
    private void TimeTick()
    {
       if(timeLeft <= 0)
+      {
+         return;
+      }
+
+      if (isPaused)
       {
          return;
       }

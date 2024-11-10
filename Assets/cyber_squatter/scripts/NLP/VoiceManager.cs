@@ -1,6 +1,7 @@
 using UnityEngine;
 using Oculus.Voice;
 using Meta.WitAi.Json;
+using UnityEngine.Events;
 
 public class VoiceManager : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class VoiceManager : MonoBehaviour
 
     private AudioSource audioSource;
     private bool _voiceCommandReady = false;
+    
+    public UnityEvent onPlayCommand;
+    public UnityEvent onPauseCommand;
+    public UnityEvent onNextCommand;
+    public UnityEvent onPreviousCommand;
+    public UnityEvent onLearnCommand;
+    public UnityEvent onMusicCommand;
+    public UnityEvent onFunCommand;
 
     private void Awake()
     {
@@ -128,35 +137,42 @@ public class VoiceManager : MonoBehaviour
     private void HandlePlayIntent()
     {
         // Play video logic
+        onPlayCommand?.Invoke();
     }
 
     private void HandlePauseIntent()
     {
         // Pause video logic
+        onPauseCommand?.Invoke();
     }
 
     private void HandleNextIntent()
     {
         // Next video logic
+        onNextCommand?.Invoke();
     }
 
     private void HandlePreviousIntent()
     {
         // Previous video logic
+        onPreviousCommand?.Invoke();
     }
 
     private void HandleLearnIntent()
     {
         // Educational video logic
+        onLearnCommand?.Invoke();
     }
 
     private void HandleMusicIntent()
     {
         // Music video logic
+        onMusicCommand?.Invoke();
     }
 
     private void HandleFunIntent()
     {
         // Fun video logic
+        onFunCommand?.Invoke();
     }
 }
