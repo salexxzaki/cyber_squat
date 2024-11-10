@@ -32,7 +32,6 @@ public class VideoPlayerScreenController : MonoBehaviour
     [Header("Debug")]
     public bool isTurnedOn = false;
 
-
     private void Start()
     {
         // load video but not play

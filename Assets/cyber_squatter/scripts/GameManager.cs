@@ -51,8 +51,18 @@ public class GameManager : MonoBehaviour
 
    private void InitialPlay()
    {
-      isPaused = false;
+      Unpause();
       videoControllah.PlayVideo();
+   }
+
+   private void Unpause()
+   {
+      isPaused = false;
+   }
+   
+   private void SetPause()
+   {
+      isPaused = true;
    }
 
    public void OnPauseHandler()
@@ -62,8 +72,8 @@ public class GameManager : MonoBehaviour
          videoControllah.TurnOffScreen();
          return;
       }
-      
-      isPaused = true;
+
+      SetPause();
       videoControllah.PauseVideo();
       coachController.MeowSound();
    }
@@ -76,7 +86,7 @@ public class GameManager : MonoBehaviour
          return;
       }
       
-      isPaused = false;
+      Unpause();
       videoControllah.PlayVideo();
       coachController.MeowSound();
    }
@@ -88,7 +98,8 @@ public class GameManager : MonoBehaviour
          videoControllah.TurnOffScreen();
          return;
       }
-      
+
+      Unpause();
       videoControllah.NextVideo();
       coachController.MeowSound();
    }
@@ -100,7 +111,8 @@ public class GameManager : MonoBehaviour
          videoControllah.TurnOffScreen();
          return;
       }
-      
+
+      Unpause();
       videoControllah.PreviousVideo();
       coachController.MeowSound();
    }
