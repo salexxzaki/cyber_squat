@@ -5414,10 +5414,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batteryControl: {fileID: 1769433562}
+  coachController: {fileID: 1209039129}
   maxTime: 30
   timeReward: 3
   interval: 1
-  timeLeft: 30
+  timeLeft: 10
   onTimeFinished:
     m_PersistentCalls:
       m_Calls:
@@ -5451,6 +5452,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lastMoodDebug: 0
 --- !u!4 &294759525
 Transform:
   m_ObjectHideFlags: 0
@@ -6828,6 +6830,11 @@ Transform:
 --- !u!1 &379715226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8339888144014641765, guid: 21304eaf71c81464aa4b9ef3b5665fce, type: 3}
+  m_PrefabInstance: {fileID: 379715224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &379715227 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3321053347698543269, guid: 21304eaf71c81464aa4b9ef3b5665fce, type: 3}
   m_PrefabInstance: {fileID: 379715224}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &390045003
@@ -9294,6 +9301,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 392569855949669136, guid: ba87ae7a15f3428429d8b382e7556cb0, type: 3}
   m_PrefabInstance: {fileID: 494011601}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &494011604 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6402232235166368720, guid: ba87ae7a15f3428429d8b382e7556cb0, type: 3}
+  m_PrefabInstance: {fileID: 494011601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &495081316
 GameObject:
   m_ObjectHideFlags: 0
@@ -11390,6 +11402,11 @@ Transform:
 --- !u!1 &630947194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1400656508810304788, guid: a0b1c0afd0c1fa446b01fef3488c1240, type: 3}
+  m_PrefabInstance: {fileID: 630947192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &630947195 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5682379259142184404, guid: a0b1c0afd0c1fa446b01fef3488c1240, type: 3}
   m_PrefabInstance: {fileID: 630947192}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &631553770
@@ -22093,14 +22110,19 @@ MonoBehaviour:
   moods:
   - mood: 0
     moodObject: {fileID: 1768069886}
+    animator: {fileID: 1768069887}
   - mood: 1
     moodObject: {fileID: 379715226}
+    animator: {fileID: 379715227}
   - mood: 3
     moodObject: {fileID: 630947194}
+    animator: {fileID: 630947195}
   - mood: 2
     moodObject: {fileID: 494011603}
+    animator: {fileID: 494011604}
   currentMood: 0
   currentMoodIndex: 0
+  cachedAnimator: {fileID: 0}
 --- !u!1 &1211031777
 GameObject:
   m_ObjectHideFlags: 0
@@ -31181,6 +31203,11 @@ MeshFilter:
 --- !u!1 &1768069886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8711289776401269294, guid: 9fcdd91d4fee8f5498d6471dcc03f9f3, type: 3}
+  m_PrefabInstance: {fileID: 1442117297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1768069887 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2688450643167691502, guid: 9fcdd91d4fee8f5498d6471dcc03f9f3, type: 3}
   m_PrefabInstance: {fileID: 1442117297}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1769433559

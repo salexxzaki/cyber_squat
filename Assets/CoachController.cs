@@ -17,6 +17,7 @@ public class MoodObject
 {
     public CoachMood mood;
     public GameObject moodObject;
+    public Animator animator;
 }
 
 public class CoachController : MonoBehaviour
@@ -24,6 +25,15 @@ public class CoachController : MonoBehaviour
     public List<MoodObject> moods;
     public CoachMood currentMood = CoachMood.Idle;
     public int currentMoodIndex = 0;
+    public Animator cachedAnimator;
+    private static readonly int Idle = Animator.StringToHash("idle");
+    private static readonly int Run = Animator.StringToHash("run");
+    private static readonly int Cry = Animator.StringToHash("cry");
+
+    private void Start()
+    {
+        cachedAnimator = moods.Find(moodObject => moodObject.mood == currentMood).animator;
+    }
 
     public void SetMood(CoachMood mood)
     {
@@ -31,6 +41,25 @@ public class CoachController : MonoBehaviour
         foreach (var moodObject in moods)
         {
             moodObject.moodObject.SetActive(moodObject.mood == mood);
+        }
+        cachedAnimator = moods.Find(moodObject => moodObject.mood == mood).animator;
+        
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        switch (currentMood)
+        {
+            case CoachMood.Idle:
+                cachedAnimator.SetTrigger(Idle);
+                break;
+            case CoachMood.Angry:
+                cachedAnimator.SetTrigger(Run);
+                break;
+            case CoachMood.Sad:
+                cachedAnimator.SetTrigger(Cry);
+                break;
         }
     }
 

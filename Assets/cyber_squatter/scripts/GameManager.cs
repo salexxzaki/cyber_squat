@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
    [Header("Reference")]
    public BatteryVisualController batteryControl;
+   public CoachController coachController;
    
    [Header("Config")]
    public float maxTime = 30f;
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
    public UnityEvent onTimeFinished;
    public UnityEvent onTimeMaxed;
    public UnityEvent onTimeUpdated;
+
+   public CoachMood lastMoodDebug;
 
    private void Start()
    {
@@ -71,13 +74,14 @@ public class GameManager : MonoBehaviour
       timeLeft -= interval;
       onTimeUpdated?.Invoke();
       
-      UpdateBatteryValue();
       
       if (timeLeft <= 0)
       {
          onTimeFinished?.Invoke();
          timeLeft = 0;
       }
+      
+      UpdateBatteryValue();
    }
 
    private void UpdateBatteryValue()
@@ -85,5 +89,22 @@ public class GameManager : MonoBehaviour
       var timeRatio = timeLeft / maxTime;
       var batteryValue = Mathf.Clamp(timeRatio, 0f, 1f);
       batteryControl.UpdateBattery(batteryValue);
+      
+      var nextMood = CoachMood.Idle;
+      if (timeRatio <= 0.10f)
+      {
+         nextMood = CoachMood.Angry;
+      } else if (timeLeft == 0)
+      {
+         nextMood = CoachMood.Sad;
+      }
+      
+      if(nextMood == lastMoodDebug)
+      {
+         return;
+      }
+      
+      coachController.SetMood(nextMood);
+      lastMoodDebug = nextMood;
    }
 }
