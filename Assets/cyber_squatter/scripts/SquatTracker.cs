@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR;
 
 public enum SquatState
@@ -35,6 +36,8 @@ public class SquatCounter : MonoBehaviour
     public SquatState squatState = SquatState.None;
     public bool isDebug = false;
     public Transform debugHeadset;
+
+    public UnityEvent onSquat;
     
 
     void Start()
@@ -97,6 +100,7 @@ public class SquatCounter : MonoBehaviour
                 lowerAmplitudeReached = false;
                 upperAmplitudeReached = false;
                 squatCountText.text = "SQUAT: " + squatCount;
+                onSquat?.Invoke();
             }
         }
     }
