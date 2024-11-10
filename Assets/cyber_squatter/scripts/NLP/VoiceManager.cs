@@ -105,6 +105,9 @@ public class VoiceManager : MonoBehaviour
             case "song":
                 HandleMusicIntent();
                 break;
+            case "fun":
+                HandleFunIntent();
+                break;
             default:
                 // Handle unknown intents if necessary
                 break;
@@ -150,5 +153,10 @@ public class VoiceManager : MonoBehaviour
     private void HandleMusicIntent()
     {
         // Music video logic
+    }
+
+    private void HandleFunIntent()
+    {
+        // Fun video logic
     }
 }
