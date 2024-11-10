@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
    public float timeLeft = 10f;
    public UnityEvent onTimeFinished;
    public UnityEvent onTimeMaxed;
+   public UnityEvent outOfTimeIdle;
    public UnityEvent onTimeUpdated;
 
    public CoachMood lastMoodDebug;

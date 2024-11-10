@@ -29,7 +29,6 @@ public class CoachInteractor : MonoBehaviour
     };
 
     private TTSSpeaker ttsSpeaker;
-    private GameManager gameManager;
 
     void Start()
     {
@@ -40,16 +39,6 @@ public class CoachInteractor : MonoBehaviour
             return;
         }
 
-        gameManager = FindObjectOfType<GameManager>();
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager component not found in the scene.");
-            return;
-        }
-
-        gameManager.onTimeFinished.AddListener(HandleOnTimeFinished);
-        gameManager.onTimeMaxed.AddListener(HandleOnTimeMaxed);
-
         if (welcomeInteractions != null && welcomeInteractions.Count > 0)
         {
             PlayRandomPhrase(welcomeInteractions);
@@ -58,19 +47,14 @@ public class CoachInteractor : MonoBehaviour
 
     void OnDestroy()
     {
-        if (gameManager != null)
-        {
-            gameManager.onTimeFinished.RemoveListener(HandleOnTimeFinished);
-            gameManager.onTimeMaxed.RemoveListener(HandleOnTimeMaxed);
-        }
     }
 
-    private void HandleOnTimeFinished()
+    public void HandleOnTimeFinished()
     {
         PlayRandomPhrase(onTimeFinishedPhrases);
     }
 
-    private void HandleOnTimeMaxed()
+    public void HandleOnTimeMaxed()
     {
         PlayRandomPhrase(onTimeMaxedPhrases);
     }
