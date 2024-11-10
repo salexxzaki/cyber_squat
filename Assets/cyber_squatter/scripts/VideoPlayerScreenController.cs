@@ -31,6 +31,13 @@ public class VideoPlayerScreenController : MonoBehaviour
     public bool isTurnedOn = false;
 
 
+    private void Start()
+    {
+        // load video but not play
+        videoPlayer.clip = videoObjects[currentVideoIndex].clip;
+    }
+
+
     public void SetTheTheme(VideoTypes type)
     {
         for (int i = 0; i < videoObjects.Count; i++)
