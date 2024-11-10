@@ -53,11 +53,13 @@ public class VideoPlayerScreenController : MonoBehaviour
             }
         }
         
+        _pausedTime = 0;
         TurnOnScreen();
     }
 
     public void TurnOnScreen()
     {
+        if(isTurnedOn && !pausedScreen.activeInHierarchy) return;
         pausedScreen.SetActive(false);
         enabledScreen.SetActive(true);
         disabledScreen.SetActive(false);
@@ -96,6 +98,7 @@ public class VideoPlayerScreenController : MonoBehaviour
 
     public void PlayVideo()
     {
+        Debug.LogWarning("Play video");
         pausedScreen.SetActive(false);
         videoPlayer.time = _pausedTime;
         if (videoPlayer.isPrepared)
