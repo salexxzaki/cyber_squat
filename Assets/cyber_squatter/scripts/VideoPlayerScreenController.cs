@@ -103,7 +103,10 @@ public class VideoPlayerScreenController : MonoBehaviour
         else
         {
             videoPlayer.Prepare();
-            videoPlayer.prepareCompleted += (vp) => videoPlayer.Play();
+            videoPlayer.prepareCompleted += (vp) =>
+            {
+                videoPlayer.Play();
+            };
         }
     }
     

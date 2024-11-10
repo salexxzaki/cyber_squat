@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
       
       isPaused = true;
       videoControllah.PauseVideo();
+      coachController.MeowSound();
    }
    
    public void OnPlayHandler()
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
       
       isPaused = false;
       videoControllah.PlayVideo();
+      coachController.MeowSound();
    }
    
    public void OnNextHandler()
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
       }
       
       videoControllah.NextVideo();
+      coachController.MeowSound();
    }
    
    public void OnPreviousHandler()
@@ -83,6 +86,7 @@ public class GameManager : MonoBehaviour
       }
       
       videoControllah.PreviousVideo();
+      coachController.MeowSound();
    }
    
    public void OnLearnHandler()
@@ -94,6 +98,7 @@ public class GameManager : MonoBehaviour
       }
       
       videoControllah.SetTheTheme(VideoTypes.study);
+      coachController.MeowSound();
    }
    
    public void OnMusicHandler()
@@ -105,6 +110,7 @@ public class GameManager : MonoBehaviour
       }
       
       videoControllah.SetTheTheme(VideoTypes.music);
+      coachController.MeowSound();
    }
    
    public void OnFunHandler()
@@ -116,6 +122,7 @@ public class GameManager : MonoBehaviour
       }
       
       videoControllah.SetTheTheme(VideoTypes.fun);
+      coachController.MeowSound();
    }
 
    public void ProvideReward()

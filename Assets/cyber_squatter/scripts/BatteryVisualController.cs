@@ -5,9 +5,12 @@ using UnityEngine;
 public class BatteryVisualController : MonoBehaviour
 {
     public float batteryValue = 0;
-    public float chasingSpeed = 0.1f;
+    public float chasingSpeed = 0.02f;
     public float chasingValue = 0;
     public Animator batteryAnimator;
+    public float fasterChasingSpeed = 0.02f;
+    public float fasterChasingValue = 0;
+    public Animator batteryFasterLineAnimator;
     private static readonly int Blend = Animator.StringToHash("Blend");
     
     [Header("Visuals")]
@@ -27,12 +30,15 @@ public class BatteryVisualController : MonoBehaviour
 
     private void ChasingControl()
     {
-        chasingValue = Mathf.Lerp(chasingValue, batteryValue, chasingSpeed);
+        chasingValue = Mathf.Lerp(chasingValue, fasterChasingValue, chasingSpeed);
         batteryAnimator.SetFloat(Blend, chasingValue);
         // Update battery visuals
         batteryMesh.material.color = batteryGradient.Evaluate(chasingValue);
         // also change the emissive color
         batteryMesh.material.SetColor("_EmissionColor", batteryGradient.Evaluate(chasingValue));
+        
+        fasterChasingValue = Mathf.Lerp(fasterChasingValue, batteryValue, fasterChasingSpeed);
+        batteryFasterLineAnimator.SetFloat(Blend, fasterChasingValue);
     }
 
     public void UpdateBattery(float newValue)

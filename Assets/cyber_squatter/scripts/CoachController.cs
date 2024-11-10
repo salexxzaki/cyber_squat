@@ -29,6 +29,9 @@ public class CoachController : MonoBehaviour
     private static readonly int Idle = Animator.StringToHash("idle");
     private static readonly int Run = Animator.StringToHash("run");
     private static readonly int Cry = Animator.StringToHash("cry");
+    
+    [Header("References")]
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -61,6 +64,13 @@ public class CoachController : MonoBehaviour
                 cachedAnimator.SetTrigger(Cry);
                 break;
         }
+    }
+
+    public void MeowSound()
+    {
+        // shift a pitch a little bit
+        audioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     private void Update()
