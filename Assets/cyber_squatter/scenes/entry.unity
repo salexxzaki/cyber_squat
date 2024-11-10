@@ -5951,7 +5951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 713216612}
         m_TargetAssemblyTypeName: VideoPlayerScreenController, Assembly-CSharp
-        m_MethodName: TurnOnScreen
+        m_MethodName: TurnOnScreenExternalOrder
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25636,7 +25636,7 @@ MonoBehaviour:
   lowerAmplitudeReached: 0
   upperAmplitudeReached: 0
   squatState: 0
-  isDebug: 0
+  isDebug: 1
   debugHeadset: {fileID: 1559551543}
   onSquat:
     m_PersistentCalls:
