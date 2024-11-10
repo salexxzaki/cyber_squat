@@ -16,11 +16,13 @@ public class SquatCounter : MonoBehaviour
     [Header("References")]
     public Transform referencePoint;
     public TMP_Text squatCountText;
+    
     [Header("Config")]
     private InputDevice _headset;
     public int squatCount;
     public float directionThreshold = 0.05f;
     public float squatThreshold = 0.2f;
+    
     [Header("Tracking")]
     public float currentHeight;
     public List<Vector3> lastPositions;
@@ -38,6 +40,7 @@ public class SquatCounter : MonoBehaviour
     public Transform debugHeadset;
 
     public UnityEvent onSquat;
+    public UnityEvent onSquatDown;
     
 
     void Start()
@@ -88,7 +91,9 @@ public class SquatCounter : MonoBehaviour
         {
             if (squatState == SquatState.GoingDown)
             {
+                if(lowerAmplitudeReached) return;
                 lowerAmplitudeReached = true;
+                onSquatDown?.Invoke();
             }
             else if (squatState == SquatState.GoingUp)
             {

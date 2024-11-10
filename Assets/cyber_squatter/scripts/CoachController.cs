@@ -33,6 +33,8 @@ public class CoachController : MonoBehaviour
     [Header("References")]
     public AudioSource audioSource;
 
+    private static readonly int Jump = Animator.StringToHash("jump");
+
     private void Start()
     {
         cachedAnimator = moods.Find(moodObject => moodObject.mood == currentMood).animator;
@@ -62,6 +64,9 @@ public class CoachController : MonoBehaviour
                 break;
             case CoachMood.Sad:
                 cachedAnimator.SetTrigger(Cry);
+                break;
+            case CoachMood.Happy:
+                cachedAnimator.SetTrigger(Jump);
                 break;
         }
     }

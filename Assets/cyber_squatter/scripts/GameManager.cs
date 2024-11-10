@@ -12,13 +12,28 @@ public class GameManager : MonoBehaviour
    public CoachController coachController;
    public VideoPlayerScreenController videoControllah;
    
+   [Header("Audiosources")]
+   public AudioSource lostTvSound;
+   public AudioSource lostCatSound;
+   public AudioSource maxxedSound;
+   public AudioSource squatUp;
+   public AudioSource squatDown;
+   public AudioSource squatCombo;
+   public AudioSource goodMood;
+   public AudioSource badMood;
+   
+   
+   
    [Header("Config")]
    public float maxTime = 30f;
    public float timeReward = 5f;
    public float interval = 1f;
    private float _timer = 0f;
+   public int comboCounter = 0;
+   public int comboStreak = 5;
    
    [Header("Debug")]
+   public bool onMaxxedStage = false;
    public float timeLeft = 10f;
    public UnityEvent onTimeFinished;
    public UnityEvent onTimeMaxed;
@@ -124,14 +139,20 @@ public class GameManager : MonoBehaviour
       videoControllah.SetTheTheme(VideoTypes.fun);
       coachController.MeowSound();
    }
-
+   
    public void ProvideReward()
    {
       var newTime = timeLeft + timeReward;
-      
-      if(timeReward > maxTime)
+
+      if (newTime >= (maxTime * 0.96f) && !onMaxxedStage)
       {
+         PlayOnShot(maxxedSound);
          onTimeMaxed?.Invoke();
+         onMaxxedStage = true;
+      }
+      
+      if(newTime > maxTime)
+      {
          timeLeft = maxTime;
       }
       else
@@ -140,6 +161,8 @@ public class GameManager : MonoBehaviour
       }
       
       onTimeUpdated?.Invoke();
+      comboCounter++;
+      ComboStreakHandler();
       UpdateBatteryValue();
    }
 
@@ -170,20 +193,55 @@ public class GameManager : MonoBehaviour
       {
          return;
       }
+      
+      MaxxedOutControl();
 
       timeLeft -= interval;
       onTimeUpdated?.Invoke();
-      
       
       if (timeLeft <= 0)
       {
          onTimeFinished?.Invoke();
          timeLeft = 0;
+         comboCounter = 0;
+
+         FailedAudioSequence();
       }
       
       UpdateBatteryValue();
    }
 
+   private void MaxxedOutControl()
+   {
+      if (timeLeft < maxTime * 0.95f && onMaxxedStage)
+      {
+         onMaxxedStage = false;
+      }
+   }
+
+   private void FailedAudioSequence()
+   {
+      PlayOnShot(lostTvSound);
+      Invoke(nameof(LostCatSound), .4f);
+   }
+
+   private void LostCatSound()
+   {
+      PlayOnShot(lostCatSound);
+   }
+
+   private void ComboStreakHandler()
+   {
+      if(comboCounter % comboStreak == 0)
+      {
+         coachController.SetMood(CoachMood.Happy);
+         
+         var pitch = (90f + (comboCounter / 100f * 50f)) / 100f;
+         PlayOnShot(squatCombo, pitch);
+         Debug.Log($"Combo Streak! Pitch: {pitch}");
+      }
+   }
+   
    private void UpdateBatteryValue()
    {
       var timeRatio = timeLeft / maxTime;
@@ -191,6 +249,11 @@ public class GameManager : MonoBehaviour
       batteryControl.UpdateBattery(batteryValue);
       
       var nextMood = CoachMood.Idle;
+
+      if (lastMoodDebug == CoachMood.Angry && timeRatio <= 0.2f)
+      {
+         nextMood = lastMoodDebug;
+      }
       
       if (timeLeft <= 0)
       {
@@ -205,7 +268,40 @@ public class GameManager : MonoBehaviour
          return;
       }
       
+      if(nextMood == CoachMood.Idle)
+      {
+         PlayOnShot(goodMood);
+      }
+      else if(nextMood == CoachMood.Angry)
+      {
+         PlayOnShot(badMood);
+      }
+      
       coachController.SetMood(nextMood);
       lastMoodDebug = nextMood;
+   }
+
+   public void SquatDownSound()
+   {
+      PlayOnShot(squatDown);
+   }
+   
+   public void SquatUpSound()
+   {
+      PlayOnShot(squatUp);
+   }
+
+   private void PlayOnShot(AudioSource audioS, float pitchOrdered = 0f)
+   {
+      if (pitchOrdered <= 0f)
+      {
+         audioS.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+      }
+      else
+      {
+         audioS.pitch = pitchOrdered;
+      }
+
+      audioS.PlayOneShot(audioS.clip);
    }
 }
