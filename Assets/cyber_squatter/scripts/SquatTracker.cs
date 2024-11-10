@@ -96,7 +96,7 @@ public class SquatCounter : MonoBehaviour
                 squatCount++;
                 lowerAmplitudeReached = false;
                 upperAmplitudeReached = false;
-                squatCountText.text = "SQUAT COUNTER: " + squatCount;
+                squatCountText.text = "SQUAT: " + squatCount;
             }
         }
     }
