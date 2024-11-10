@@ -5412,9 +5412,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95bf9fa2fc64437abb469aae64f657c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  batteryControl: {fileID: 1769433562}
   maxTime: 30
   timeReward: 5
-  timeLeft: 10
+  interval: 1
+  timeLeft: 30
+  onTimeFinished:
+    m_PersistentCalls:
+      m_Calls: []
+  onTimeMaxed:
+    m_PersistentCalls:
+      m_Calls: []
+  onTimeUpdated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &294759525
 Transform:
   m_ObjectHideFlags: 0
@@ -30418,6 +30429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769433560}
   - component: {fileID: 1769433561}
+  - component: {fileID: 1769433562}
   m_Layer: 0
   m_Name: battery_wrapper
   m_TagString: Untagged
@@ -30460,6 +30472,53 @@ MonoBehaviour:
   averageLastPosition: {x: 0, y: 0, z: 0}
   averageLastRotation: {x: 0, y: 0, z: 0, w: 0}
   samples: 10
+--- !u!114 &1769433562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769433559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316801669c1cc4ebcb976cc15d2d7c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batteryValue: 0
+  chasingSpeed: 0.015
+  chasingValue: 0
+  batteryAnimator: {fileID: 1757279804}
+  batteryMesh: {fileID: 1698960558}
+  batteryGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.24056602, b: 0.24056602, a: 1}
+    key1: {r: 1, g: 0.9470337, b: 0.48235297, a: 1}
+    key2: {r: 0.13535964, g: 0.9984794, b: 0.013847381, a: 0}
+    key3: {r: 0.10980392, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 7132
+    ctime1: 18890
+    ctime2: 38357
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
 --- !u!1 &1771534257
 GameObject:
   m_ObjectHideFlags: 0
