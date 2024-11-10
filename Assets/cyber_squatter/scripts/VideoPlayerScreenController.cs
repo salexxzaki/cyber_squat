@@ -23,6 +23,7 @@ public class VideoPlayerScreenController : MonoBehaviour
     public GameObject enabledScreen;
     public GameObject disabledScreen;
     public GameObject pausedScreen;
+    public GameObject controlsScreen;
     public VideoPlayer videoPlayer;
     
     public List<VideoObject> videoObjects = new List<VideoObject>();
@@ -61,6 +62,7 @@ public class VideoPlayerScreenController : MonoBehaviour
         if(isTurnedOn) return;
         enabledScreen.SetActive(true);
         disabledScreen.SetActive(false);
+        controlsScreen.SetActive(true);
         isTurnedOn = true;
         PlayVideo();
     }
@@ -134,6 +136,7 @@ public class VideoPlayerScreenController : MonoBehaviour
         PauseVideo();
         enabledScreen.SetActive(false);
         disabledScreen.SetActive(true);
+        controlsScreen.SetActive(false);
         isTurnedOn = false;
     }
 }
