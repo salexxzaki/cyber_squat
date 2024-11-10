@@ -99,7 +99,7 @@ public class SquatCounter : MonoBehaviour
                 squatCount++;
                 lowerAmplitudeReached = false;
                 upperAmplitudeReached = false;
-                squatCountText.text = "SQUAT: " + squatCount;
+                squatCountText.text = "SQUATS: " + squatCount;
                 onSquat?.Invoke();
             }
         }
