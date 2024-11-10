@@ -28,6 +28,8 @@ Ya  notification sound by lildumpling333 [Link](https://www.zedge.net/notificati
 
 ----
 
- Austie Bost Kitten Klub Font [Link](https://www.1001fonts.com/austie-bost-kitten-klub-font.html)
-
+Austie Bost Kitten Klub Font [Link](https://www.1001fonts.com/austie-bost-kitten-klub-font.html)
 Ethnocentric by Typodermic Fonts [Link](https://www.dafont.com/ethnocentric.font) 
+
+# AI Utilization
+We've heavily rely on AI from Meta Voice SDK (speech recognition) in order to implement voice control. Also we've tested some whisper by OpenAI (but archived this idea).
