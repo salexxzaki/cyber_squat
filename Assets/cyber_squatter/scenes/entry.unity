@@ -10340,7 +10340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appVoiceExperience: {fileID: 548228497}
-  assistantSound: {fileID: 8300000, guid: e6264000c423f4cc89ffc2645d3dadc7, type: 3}
+  assistantSound: {fileID: 8300000, guid: 873d97fcceeea4c299e714a02b691452, type: 3}
   onPlayCommand:
     m_PersistentCalls:
       m_Calls:

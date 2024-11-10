@@ -184,12 +184,13 @@ public class GameManager : MonoBehaviour
       batteryControl.UpdateBattery(batteryValue);
       
       var nextMood = CoachMood.Idle;
-      if (timeRatio <= 0.10f)
-      {
-         nextMood = CoachMood.Angry;
-      } else if (timeLeft == 0)
+      
+      if (timeLeft <= 0)
       {
          nextMood = CoachMood.Sad;
+      } else if (timeRatio <= 0.10f)
+      {
+         nextMood = CoachMood.Angry;
       }
       
       if(nextMood == lastMoodDebug)
