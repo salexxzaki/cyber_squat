@@ -5630,7 +5630,7 @@ MonoBehaviour:
   maxTime: 30
   timeReward: 3
   interval: 1
-  timeLeft: 10
+  timeLeft: 5
   onTimeFinished:
     m_PersistentCalls:
       m_Calls:
