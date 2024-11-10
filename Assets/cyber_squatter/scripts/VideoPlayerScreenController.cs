@@ -35,6 +35,10 @@ public class VideoPlayerScreenController : MonoBehaviour
     {
         // load video but not play
         videoPlayer.clip = videoObjects[currentVideoIndex].clip;
+        videoPlayer.Prepare();
+        videoPlayer.prepareCompleted += (vp) => videoPlayer.Pause();
+        
+        Invoke(nameof(InitialPlay), 1.5f);
     }
 
 
@@ -95,15 +99,14 @@ public class VideoPlayerScreenController : MonoBehaviour
     {
         pausedScreen.SetActive(false);
         videoPlayer.time = _pausedTime;
-        if (videoPlayer.isPrepared)
-        {
-            videoPlayer.Play();
-        }
-        else
-        {
-            videoPlayer.Prepare();
-            videoPlayer.prepareCompleted += (vp) => videoPlayer.Play();
-        }
+        videoPlayer.Play();
+        
+        
+    }
+    
+    private void InitialPlay()
+    {
+        PlayVideo();
     }
 
     public void PauseVideo()

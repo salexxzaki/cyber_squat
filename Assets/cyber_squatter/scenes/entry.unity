@@ -13592,12 +13592,12 @@ MonoBehaviour:
   pausedScreen: {fileID: 1823682192}
   videoPlayer: {fileID: 84733571}
   videoObjects:
-  - type: 1
-    clip: {fileID: 32900000, guid: ce6d0e48d7a9b44dcb883d1789ad62ae, type: 3}
   - type: 2
     clip: {fileID: 32900000, guid: e94eb39baa50d4fd1b5e6f0d2d2a0eeb, type: 3}
   - type: 0
     clip: {fileID: 32900000, guid: 1e87b4a15e0a34b1098f31b4c6fe4894, type: 3}
+  - type: 1
+    clip: {fileID: 32900000, guid: ce6d0e48d7a9b44dcb883d1789ad62ae, type: 3}
   currentVideoIndex: 0
   isTurnedOn: 0
 --- !u!1 &713440094
