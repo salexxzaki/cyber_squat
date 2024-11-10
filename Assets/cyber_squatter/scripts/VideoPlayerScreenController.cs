@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class VideoPlayerScreenController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject enabledScreen;
+    public GameObject disabledScreen;
+    
+    
+    // public 
+    
+    public void TurnOnScreen()
     {
-        
+        enabledScreen.SetActive(true);
+        disabledScreen.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void TurnOffScreen()
     {
-        
+        enabledScreen.SetActive(false);
+        disabledScreen.SetActive(true);
     }
 }

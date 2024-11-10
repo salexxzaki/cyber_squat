@@ -16,7 +16,7 @@ public class SmoothLookAt : MonoBehaviour
 
       private void LookAtSmooth()
       {
-            Vector3 direction = target.position - transform.position;
+            Vector3 direction = transform.position - target.position;
             Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
             transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, smoothTime);
       }

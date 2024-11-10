@@ -37,6 +37,9 @@ MonoBehaviour:
     lastTrainedAt: 2024-11-09T15:30:25-0800
     nextTrainAt: 2024-11-09T15:29:07-0800
     intents:
+    - id: 985084650299959
+      name: coach
+      entities: []
     - id: 3844501179096349
       name: learn
       entities:
@@ -69,6 +72,11 @@ MonoBehaviour:
       entities:
       - name: previous:previous
         id: 538615605620613
+    - id: 1275179377239967
+      name: wake_word
+      entities:
+      - name: wake_word:wake_word
+        id: 893497712918040
     entities:
     - name: learn
       id: 1710326256479204
@@ -223,6 +231,24 @@ MonoBehaviour:
       - keyword: Stop the video
         synonyms:
         - stop the video
+    - name: wake_word
+      id: 522907780584071
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: wake_word
+        id: 893497712918040
+      keywords:
+      - keyword: Hello coach
+        synonyms:
+        - hello coach
+      - keyword: Hey coach
+        synonyms:
+        - hey coach
+      - keyword: Hi coach
+        synonyms:
+        - hi coach
     traits: []
     versionTags: []
     voices:
