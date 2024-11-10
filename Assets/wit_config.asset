@@ -33,23 +33,20 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2024-11-09T14:02:06-0800
     trainingStatus: 1
-    lastTrainDuration: 78
-    lastTrainedAt: 2024-11-09T15:30:25-0800
-    nextTrainAt: 2024-11-09T15:29:07-0800
+    lastTrainDuration: 54
+    lastTrainedAt: 2024-11-09T22:34:05-0800
+    nextTrainAt: 2024-11-09T22:33:11-0800
     intents:
-    - id: 985084650299959
-      name: coach
-      entities: []
+    - id: 1113496916975781
+      name: fun
+      entities:
+      - name: fun:fun
+        id: 482043447541401
     - id: 3844501179096349
       name: learn
       entities:
       - name: learn:learn
         id: 2050077332074927
-    - id: 1121371482750239
-      name: music
-      entities:
-      - name: song:song
-        id: 502603802779624
     - id: 8437882423006541
       name: next
       entities:
@@ -63,6 +60,8 @@ MonoBehaviour:
     - id: 1074357210742141
       name: play
       entities:
+      - name: pause:pause
+        id: 1356420779100164
       - name: play:play
         id: 1456536375014758
       - name: stop:stop
@@ -72,12 +71,59 @@ MonoBehaviour:
       entities:
       - name: previous:previous
         id: 538615605620613
+    - id: 1121371482750239
+      name: song
+      entities:
+      - name: song:song
+        id: 502603802779624
     - id: 1275179377239967
       name: wake_word
       entities:
       - name: wake_word:wake_word
         id: 893497712918040
     entities:
+    - name: fun
+      id: 425923413706079
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: fun
+        id: 482043447541401
+      keywords:
+      - keyword: Entertain me with a
+        synonyms:
+        - entertain me with a
+      - keyword: I need a good laugh
+        synonyms:
+        - i need a good laugh
+      - keyword: I want to see something entertaining
+        synonyms:
+        - i want to see something entertaining
+      - keyword: Make me laugh
+        synonyms:
+        - make me laugh
+      - keyword: Play a funny clip
+        synonyms:
+        - play a funny clip
+      - keyword: Play a hilarious video
+        synonyms:
+        - play a hilarious video
+      - keyword: Show me fun videos
+        synonyms:
+        - show me fun videos
+      - keyword: Show me some fun videos
+        synonyms:
+        - show me some fun videos
+      - keyword: Show me something that will make me smile
+        synonyms:
+        - show me something that will make me smile
+      - keyword: Turn on some fun videos
+        synonyms:
+        - turn on some fun videos
+      - keyword: fun
+        synonyms:
+        - fun
     - name: learn
       id: 1710326256479204
       lookups:
@@ -93,6 +139,9 @@ MonoBehaviour:
       - keyword: I want to learn something
         synonyms:
         - i want to learn something
+      - keyword: "I\u2019d like to watch something informative"
+        synonyms:
+        - "i\u2019d like to watch something informative"
       - keyword: "Let\u2019s watch something educational"
         synonyms:
         - "let\u2019s watch something educational"
@@ -144,12 +193,27 @@ MonoBehaviour:
       - keyword: Can you pause the video?
         synonyms:
         - can you pause the video?
+      - keyword: P
+        synonyms:
+        - p
       - keyword: Pause it
         synonyms:
         - pause it
       - keyword: Pause the video
         synonyms:
         - pause the video
+      - keyword: Please stop
+        synonyms:
+        - please stop
+      - keyword: Stop
+        synonyms:
+        - stop
+      - keyword: Stop the video
+        synonyms:
+        - stop the video
+      - keyword: Stop this video
+        synonyms:
+        - stop this video
     - name: play
       id: 2374263772912667
       lookups:
@@ -162,9 +226,15 @@ MonoBehaviour:
       - keyword: "Let\u2019s watch the video"
         synonyms:
         - "let\u2019s watch the video"
+      - keyword: Play
+        synonyms:
+        - play
       - keyword: Play the video
         synonyms:
         - play the video
+      - keyword: Please, play the video
+        synonyms:
+        - please, play the video
       - keyword: Start the video
         synonyms:
         - start the video
@@ -207,12 +277,24 @@ MonoBehaviour:
       - keyword: Can you play some music?
         synonyms:
         - can you play some music?
+      - keyword: Could you please play some music?
+        synonyms:
+        - could you please play some music?
       - keyword: Could you start the music?
         synonyms:
         - could you start the music?
+      - keyword: Music
+        synonyms:
+        - music
+      - keyword: Play music
+        synonyms:
+        - play music
       - keyword: Play some music
         synonyms:
         - play some music
+      - keyword: Play some tunes
+        synonyms:
+        - play some tunes
       - keyword: Please play music
         synonyms:
         - please play music
@@ -240,6 +322,9 @@ MonoBehaviour:
       - name: wake_word
         id: 893497712918040
       keywords:
+      - keyword: Coach
+        synonyms:
+        - coach
       - keyword: Hello coach
         synonyms:
         - hello coach
