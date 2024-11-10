@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
          return;
       }
       
+      Unpause();
       videoControllah.SetTheTheme(VideoTypes.study);
       coachController.MeowSound();
    }
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour
          return;
       }
       
+      Unpause();
       videoControllah.SetTheTheme(VideoTypes.music);
       coachController.MeowSound();
    }
@@ -149,6 +151,7 @@ public class GameManager : MonoBehaviour
          return;
       }
       
+      Unpause();
       videoControllah.SetTheTheme(VideoTypes.fun);
       coachController.MeowSound();
    }

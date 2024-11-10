@@ -58,7 +58,7 @@ public class VideoPlayerScreenController : MonoBehaviour
 
     public void TurnOnScreen()
     {
-        if(isTurnedOn) return;
+        pausedScreen.SetActive(false);
         enabledScreen.SetActive(true);
         disabledScreen.SetActive(false);
         controlsScreen.SetActive(true);
